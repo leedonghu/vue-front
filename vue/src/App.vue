@@ -10,6 +10,16 @@ export default {
   name: 'App',
   components: {
     HelloWorld
+  },
+  created(){
+    axios.get('http://localhost:8090/board/get-board-list.do')
+      .then(function(response) {
+        console.log(response);
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+    
   }
 }
 </script>
